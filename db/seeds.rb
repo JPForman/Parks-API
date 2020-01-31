@@ -16,8 +16,26 @@ class seed
     seed.generate_reviews
   end
 
-def generate_parks
-  
-end
+  def generate_parks
+    20.times do |i|
+      park = Park.create!(
+        name: Faker::Movies::Hobbit.location,
+        state: state = Faker::Address.state
+      )
+    end
+  end
 
+  def generate_reviews
+    parks = Parks.all
+
+    50.times do |i|
+      park = park.sample
+      review = Review.create!({
+        :title => Faker::Quotes::Shakespeare.king_richard_iii_quote,
+        :content => Faker::TvShows::RickAndMorty.quote
+        :park_id => park.id
+
+        })
+    end
+  end
 end
