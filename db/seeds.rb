@@ -6,7 +6,7 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
-class seed
+class Seed
 
   def self.begin
     Park.destroy_all
@@ -32,10 +32,15 @@ class seed
       park = park.sample
       review = Review.create!({
         :title => Faker::Quotes::Shakespeare.king_richard_iii_quote,
-        :content => Faker::TvShows::RickAndMorty.quote
+        :content => Faker::TvShows::RickAndMorty.quote,
         :park_id => park.id
 
         })
     end
   end
 end
+
+Seed.begin
+
+p "Created #{Park.count} Parks"
+p "Created #{Reviews.count} Reviews"
