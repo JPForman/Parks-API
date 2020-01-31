@@ -9,40 +9,40 @@ class ReviewsController < ApplicationController
     #   @user = User.find(params[:user_id])
     # end
     @park = Park.find(params[:park_id])
-    @messages = @park.messages
-    json_response(@messages)
+    @reviews = @park.reviews
+    json_response(@reviews)
   end
 
   def show
-    @message = Review.find(params[:id])
-    json_response(@message)
+    @review = Review.find(params[:id])
+    json_response(@review)
   end
 
   def create
-    @message = Review.create!(message_params)
-    json_response(@message, :created)
+    @review = Review.create!(review_params)
+    json_response(@review, :created)
   end
 
   def update
-    @message = Review.find(params[:id])
-    if @message.update!(message_params)
+    @review = Review.find(params[:id])
+    if @review.update!(review_params)
       render status: 200, json: {
-        message: "Review successully updated!"
+        review: "Review successully updated!"
       }
     end
   end
 
   def destroy
-    @message = Review.find(params[:id])
-    if @message.destroy!
+    @review = Review.find(params[:id])
+    if @review.destroy!
       render status: 200, json: {
-        message: "DESTROYED Review successfully."
+        review: "DESTROYED Review successfully."
       }
     end
   end
 
   private
-  def message_params
+  def review_params
     params.permit(:title, :content, :park_id)
   end
 end
