@@ -26,10 +26,10 @@ class Seed
   end
 
   def generate_reviews
-    parks = Parks.all
+    parks = Park.all
 
     50.times do |i|
-      park = park.sample
+      park = parks.sample
       review = Review.create!({
         :title => Faker::Quotes::Shakespeare.king_richard_iii_quote,
         :content => Faker::TvShows::RickAndMorty.quote,
@@ -43,4 +43,4 @@ end
 Seed.begin
 
 p "Created #{Park.count} Parks"
-p "Created #{Reviews.count} Reviews"
+p "Created #{Review.count} Reviews"
