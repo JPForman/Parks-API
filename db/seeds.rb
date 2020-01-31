@@ -5,3 +5,19 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+
+class seed
+
+  def self.begin
+    Park.destroy_all
+    Review.destroy_all
+    seed = Seed.new
+    seed.generate_parks
+    seed.generate_reviews
+  end
+
+def generate_parks
+  
+end
+
+end
