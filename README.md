@@ -1,24 +1,66 @@
-# README
+# _National Parks API_
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+#### An API of National Parks with associated reviews.
 
-Things you may want to cover:
+###### By Joshua Forman
 
-* Ruby version
+## Description
 
-* System dependencies
+_This API is designed for the user to be able to GET, PATCH, DESTROY, AND POST National Parks as well as reviews for any park. This was completed in Ruby with Rails and ActiveRecord._  
 
-* Configuration
+_NOTE: Admin permissions can only be added outside of the program._
 
-* Database creation
 
-* Database initialization
+## Specs
 
-* How to run the test suite
+1. _Full CRUD functionality for parks._
 
-* Services (job queues, cache servers, search engines, etc.)
+2. _Full CRUD functionality for reviews._
 
-* Deployment instructions
+3. _Routing for a one to many relationship._
 
-* ...
+4. _Endpoints for GET, PATCH, DESTROY, and POST of both parks and reviews._
+
+_(for more detailed specs, see included specs files)_
+
+## Setup
+
+_Using command line:_
+* _$ git clone https://github.com/JPForman/Parks-API.git ._
+* _$ bundle install_
+* _$ rake db:create_
+* _$ rake db:test:prepare_
+* _$ rake db:migrate_
+* _$ rails s_  
+
+## For routing and endpoints
+
+* _$ rake routes_  
+or  
+*_GET /Parks_  
+*_GET /Parks/id_  
+*_GET /Parks/park_id/reviews_  
+*_GET /Parks/park_id/reviews/id_  
+
+(same with PATCH, POST, or DESTROY)
+
+
+## Support and contact details
+
+_Email: [cyborgforman@gmail.com](mailto:cyborgforman@gmail.com)_
+
+## Technologies Used
+
+_Ruby, Rails, rspec, psql, ActiveRecord_
+
+
+### Known Bugs
+_needs more thorough testing_  
+_needs accurate elements for National Park names and states_  
+
+
+### License
+
+*MIT*
+
+Copyright (c) 2020 **_Joshua Forman_**
