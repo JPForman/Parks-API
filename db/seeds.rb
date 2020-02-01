@@ -39,8 +39,7 @@ class Seed
     end
   end
 end
+    Seed.begin
 
-Seed.begin
-
-p "Created #{Park.count} Parks"
-p "Created #{Review.count} Reviews"
+    p "Created #{Park.count} Parks"
+    p "Created #{Review.count} Reviews"
