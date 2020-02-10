@@ -41,6 +41,9 @@ or
 To get all parks:  
 _GET http://Parks_  
 
+To get a random park:  
+_GET http://Parks/random_
+
 To get a park by id:  
 _GET http://Parks/id_
 
