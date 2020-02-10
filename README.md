@@ -35,14 +35,35 @@ _Using command line:_
 
 ## For routing and endpoints
 
-* _$ rake routes_  
+_$ rake routes_  
 or  
-*_GET /Parks_  
-*_GET /Parks/id_  
-*_GET /Parks/park_id/reviews_  
-*_GET /Parks/park_id/reviews/id_  
 
-(same with PATCH, POST, or DESTROY)
+To get all parks:  
+_GET http://Parks_  
+
+To get a park by id:  
+_GET http://Parks/id_
+
+To update a park by id:  
+_PATCH http://Parks/id_
+
+To create a park by id:  
+_POST http://Parks/id_
+
+_To get all of a park's reviews_  
+_GET http://Parks/park_id/reviews_
+
+_To get a park's specific review by id_  
+_GET http://Parks/park_id/reviews/id_  
+
+_To update a park's specific review by id_  
+_PATCH http://Parks/park_id/reviews/id_  
+
+To create a park's specific review by id_  
+_POST http://Parks/park_id/reviews/id_  
+
+To destroy a park's specific review by id_  
+_DESTROY http://Parks/park_id/reviews/id_  
 
 
 ## Support and contact details
